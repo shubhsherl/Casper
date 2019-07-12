@@ -1,0 +1,38 @@
+{{!< default}}
+<header class="site-header outer">
+    <div class="inner">
+        {{> "site-nav"}}
+    </div>
+    </header>
+
+    {{#post}}
+
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <header class="post-full-header">
+                <h1 class="post-full-title">{{title}}</h1>
+            </header>
+            {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}} {{#foreach tags}}
+            <article class="post-card">
+                {{#if feature_image}}
+                <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
+                {{else}}
+                <div class="post-card-image">{{> "icons/avatar"}}</div>
+                {{/if}}
+                <div class="post-card-content">
+                    <a class="post-card-content-link" href={{url}}>
+                        <header class="post-card-header">
+                            <h2 class="post-card-title">{{name}}</h2>
+                        </header>
+                        <section class="post-card-excerpt">
+                            <p>{{description}}</p>
+                            <p class="count-post" style="float:right;">{{count.posts}} Posts</p>
+                        </section>
+                    </a>
+                </div>
+            </article>
+            {{/foreach}} {{/get}}
+        </div>
+    </main>
+
+    {{/post}}

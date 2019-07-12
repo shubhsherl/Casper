@@ -593,6 +593,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
+.count-post {
+    float: right;
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
